@@ -14,7 +14,7 @@ import android.widget.Toast;
  */
 
 public class SMSCore extends BroadcastReceiver {
-    private static final String SMS_RECEIVED = "android.provider.Telephone.SMS_RECEVIED";
+    private static final String SMS_RECEIVED = "android.provider.Telephony.SMS_RECEIVED";
     private static final String TAG = "SMSBroadcastReceiver";
     MainActivity activity;
 
