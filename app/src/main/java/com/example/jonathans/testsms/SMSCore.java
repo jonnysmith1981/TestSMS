@@ -16,6 +16,7 @@ import android.widget.Toast;
 public class SMSCore extends BroadcastReceiver {
     private static final String SMS_RECEIVED = "android.provider.Telephone.SMS_RECEVIED";
     private static final String TAG = "SMSBroadcastReceiver";
+    MainActivity activity;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -36,7 +37,8 @@ public class SMSCore extends BroadcastReceiver {
                     }
                 }
                 if (messages.length > -1) {
-                    Toast.makeText(context, "Message Received: " + messages[0].getMessageBody(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(context, "Message Received: " + messages[0].getMessageBody(), Toast.LENGTH_LONG).show();
+                    activity.addMessageToList(messages[0].getMessageBody());
                 }
             }
         }
