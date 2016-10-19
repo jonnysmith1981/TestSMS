@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
             Bundle bundle = intent.getExtras();
             String newMsg = (String)bundle.get("msg");
             if (isPostCode(newMsg) == true) {
-                messages.add(newMsg + " - MAP AVAILABLE");
+                messages.add(newMsg + " - POSTCODE FOUND");
             }
             else {
                 messages.add(newMsg);
