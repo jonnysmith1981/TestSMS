@@ -20,8 +20,6 @@ public class SMSCore extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.i(TAG, "Intent received: " + intent.getAction());
-
         if (intent.getAction().equals(SMS_RECEIVED)) {
             Bundle bundle = intent.getExtras();
             if (bundle != null) {
@@ -38,7 +36,9 @@ public class SMSCore extends BroadcastReceiver {
                 }
                 if (messages.length > -1) {
                     //Toast.makeText(context, "Message Received: " + messages[0].getMessageBody(), Toast.LENGTH_LONG).show();
-                    activity.addMessageToList(messages[0].getMessageBody());
+                    Intent msgIntent = new Intent("NEW_SMS");
+                    msgIntent.putExtra("msg", messages[0].getMessageBody());
+                    context.sendBroadcast(msgIntent);
                 }
             }
         }
