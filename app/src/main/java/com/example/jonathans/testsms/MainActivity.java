@@ -4,15 +4,12 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import android.util.Log;
-
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
